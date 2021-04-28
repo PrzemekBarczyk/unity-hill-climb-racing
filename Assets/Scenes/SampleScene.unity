@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 539936639}
   - component: {fileID: 539936641}
   - component: {fileID: 539936640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 892034106}
   - component: {fileID: 892034108}
   - component: {fileID: 892034107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wheel Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892034104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.81, y: -0.575, z: 0}
+  m_LocalPosition: {x: -0.81, y: -0.724, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1305309690}
@@ -387,7 +387,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c2e7ce09ea32c124c9d045db4cba2b8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -431,7 +431,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5b2a5c225ad041d4fb93f574f26aa6e2, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 1061076794}
   - component: {fileID: 1061076793}
   - component: {fileID: 1061076796}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +668,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1061076792}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cffdf87d513744a4a9fd98854af3cc7c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -788,7 +788,8 @@ GameObject:
   - component: {fileID: 1305309689}
   - component: {fileID: 1305309692}
   - component: {fileID: 1305309691}
-  m_Layer: 0
+  - component: {fileID: 1305309693}
+  m_Layer: 6
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,11 +850,11 @@ WheelJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0.795, y: -0.575}
+  m_Anchor: {x: 0.807, y: -0.612}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
-    m_DampingRatio: 0.7
-    m_Frequency: 4
+    m_DampingRatio: 0.3
+    m_Frequency: 2
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -873,16 +874,39 @@ WheelJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.819, y: -0.575}
+  m_Anchor: {x: -0.81, y: -0.612}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
-    m_DampingRatio: 0.7
-    m_Frequency: 4
+    m_DampingRatio: 0.3
+    m_Frequency: 2
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
+--- !u!114 &1305309693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305309688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6001261f6ccf08a4783e86cc7f6e3ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carRigidbody: {fileID: 1305309689}
+  driveWheelJoint: {fileID: 1305309692}
+  backWheelCollider: {fileID: 892034107}
+  frontWheelCollider: {fileID: 1492285304}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  maxDriveSpeed: 2000
+  power: 10000
+  onAirRotationSpeed: 8
+  onGroundRotationSpeed: 1
 --- !u!1 &1492285301
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +919,7 @@ GameObject:
   - component: {fileID: 1492285303}
   - component: {fileID: 1492285305}
   - component: {fileID: 1492285304}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wheel Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492285301}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.807, y: -0.575, z: 0}
+  m_LocalPosition: {x: 0.807, y: -0.724, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1305309690}
@@ -955,7 +979,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c2e7ce09ea32c124c9d045db4cba2b8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -999,7 +1023,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5b2a5c225ad041d4fb93f574f26aa6e2, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1014,7 +1038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2124388249}
   - component: {fileID: 2124388250}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Driver Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1074,7 +1098,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: cb0cd33bcdaf9374386b6efed2e74674, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1096,7 +1120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2138277377}
   - component: {fileID: 2138277378}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Driver Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1180,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 4d8f7308b9b99e648ac9f8864b14f5b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
