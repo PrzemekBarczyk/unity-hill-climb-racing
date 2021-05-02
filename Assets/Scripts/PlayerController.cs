@@ -22,7 +22,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float onAirRotationSpeed = 8f;
     [SerializeField] float onGroundRotationSpeed = 1f;
 
-    float input;
+    float brakeInput;
+    float gasInput;
+    float finalInput;
 
     void Update()
     {
@@ -31,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-        if (input == 0)
+        if (brakeInput == 0 && gasInput == 0)
 		{
             StopMotor();
 		}
@@ -44,13 +46,21 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
 	{
-        input = Input.GetAxis("Horizontal");
+        brakeInput = TouchInput.GetBrakeInput();
+        gasInput = -TouchInput.GetGasInput();
+
+        if (brakeInput > 0) finalInput = brakeInput;
+        else finalInput = gasInput;
     }
 
     void RunMotor()
 	{
+        float finalInput;
+        if (brakeInput > 0) finalInput = brakeInput;
+        else finalInput = gasInput;
+
         driveWheelJoint.useMotor = true;
-        driveWheelJoint.motor = new JointMotor2D { motorSpeed = -input * maxDriveSpeed, maxMotorTorque = power }; ;
+        driveWheelJoint.motor = new JointMotor2D { motorSpeed = finalInput * maxDriveSpeed, maxMotorTorque = power }; ;
     }
 
     void StopMotor()
@@ -60,8 +70,8 @@ public class PlayerController : MonoBehaviour
 
     void Rotate()
 	{
-		if (!OnGround()) carRigidbody.AddTorque(input * onAirRotationSpeed);
-		else carRigidbody.AddTorque(input * onGroundRotationSpeed);
+		if (!OnGround()) carRigidbody.AddTorque(-finalInput * onAirRotationSpeed);
+		else carRigidbody.AddTorque(-finalInput * onGroundRotationSpeed);
 	}
 
     bool OnGround()
