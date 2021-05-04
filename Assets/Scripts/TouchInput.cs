@@ -5,25 +5,57 @@ public class TouchInput : MonoBehaviour
 	[SerializeField] TouchDetector brakeButton;
 	[SerializeField] TouchDetector gasButton;
 
-	static float brakeInput;
-	static float gasInput;
+	[SerializeField] float brakeSmoothTime = 0.01f;
+	[SerializeField] float gasSmoothTime = 0.05f;
+
+	static float rawBrakeInput;
+	static float rawGasInput;
+
+	static float dampedBrakeInput;
+	static float dampedGasInput;
 
 	void Update()
 	{
-		if (brakeButton.IsTouched()) brakeInput = 1f;
-		else brakeInput = 0f;
+		if (brakeButton.IsTouched())
+		{
+			rawBrakeInput = 1f;
+			dampedBrakeInput = ValueDamper.Damp(dampedBrakeInput, rawBrakeInput, brakeSmoothTime);
+		}
+		else
+		{
+			rawBrakeInput = 0f;
+			dampedBrakeInput = rawBrakeInput;
+		}
 
-		if (gasButton.IsTouched()) gasInput = 1f;
-		else gasInput = 0f;
+		if (gasButton.IsTouched())
+		{
+			rawGasInput = 1f;
+			dampedGasInput = ValueDamper.Damp(dampedGasInput, rawGasInput, gasSmoothTime);
+		}
+		else
+		{
+			rawGasInput = 0f;
+			dampedGasInput = rawGasInput;
+		}
 	}
 
-	public static float GetBrakeInput()
+	public static float GetDampedBrakeInput()
 	{
-		return brakeInput;
+		return dampedBrakeInput;
 	}
 
-	public static float GetGasInput()
+	public static float GetDampedGasInput()
 	{
-		return gasInput;
+		return dampedGasInput;
+	}
+
+	public static float GetRawBrakeInput()
+	{
+		return rawBrakeInput;
+	}
+
+	public static float GetRawGasInput()
+	{
+		return rawGasInput;
 	}
 }

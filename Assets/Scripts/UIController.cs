@@ -9,8 +9,8 @@ public class UIController : MonoBehaviour
 
 	void Update()
 	{
-        float brakeInput = TouchInput.GetBrakeInput();
-        float gasInput = TouchInput.GetGasInput();
+        float brakeInput = TouchInput.GetRawBrakeInput();
+        float gasInput = TouchInput.GetRawGasInput();
 
         if (brakeInput > 0) DisplayBrakePressed(true);
         else DisplayBrakePressed(false);

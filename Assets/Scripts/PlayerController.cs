@@ -46,19 +46,15 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
 	{
-        brakeInput = TouchInput.GetBrakeInput();
-        gasInput = -TouchInput.GetGasInput();
+        brakeInput = TouchInput.GetDampedBrakeInput();
+        gasInput = -TouchInput.GetDampedGasInput();
 
-        if (brakeInput > 0) finalInput = brakeInput;
+        if (brakeInput > 0f) finalInput = brakeInput;
         else finalInput = gasInput;
     }
 
     void RunMotor()
 	{
-        float finalInput;
-        if (brakeInput > 0) finalInput = brakeInput;
-        else finalInput = gasInput;
-
         driveWheelJoint.useMotor = true;
         driveWheelJoint.motor = new JointMotor2D { motorSpeed = finalInput * maxDriveSpeed, maxMotorTorque = power }; ;
     }
