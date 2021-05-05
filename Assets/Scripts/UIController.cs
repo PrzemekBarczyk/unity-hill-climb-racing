@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    [Header("Fuel")]
+    [SerializeField] Slider fuelLevelSlider;
+
     [Header("Score")]
     [SerializeField] Text scoreText;
 
@@ -21,6 +24,11 @@ public class UIController : MonoBehaviour
         else DisplayBrakePressed(false);
         if (gasInput > 0) DisplayGasPressed(true);
         else DisplayGasPressed(false);
+	}
+
+    public void UpdateFuelLevel(float newLevel)
+	{
+        fuelLevelSlider.value = newLevel;
 	}
 
     public void UpdateScore(string newScore)
