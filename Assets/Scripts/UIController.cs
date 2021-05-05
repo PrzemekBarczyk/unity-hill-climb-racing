@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    [Header("Score")]
+    [SerializeField] Text scoreText;
+
+    [Header("Pedals")]
     [SerializeField] GameObject brakeNormalImage;
     [SerializeField] GameObject brakePressedImage;
     [SerializeField] GameObject gasNormalImage;
@@ -16,6 +21,11 @@ public class UIController : MonoBehaviour
         else DisplayBrakePressed(false);
         if (gasInput > 0) DisplayGasPressed(true);
         else DisplayGasPressed(false);
+	}
+
+    public void UpdateScore(string newScore)
+	{
+        scoreText.text = newScore;
 	}
 
 	public void DisplayBrakePressed(bool isPressed)
