@@ -26,7 +26,14 @@ public class PlayerController : MonoBehaviour
     float gasInput;
     float finalInput;
 
-    void Update()
+    GameManager gameManager;
+
+	void Start()
+	{
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+	}
+
+	void Update()
     {
         GetInput();
     }
@@ -55,8 +62,11 @@ public class PlayerController : MonoBehaviour
 
     void RunMotor()
 	{
-        driveWheelJoint.useMotor = true;
-        driveWheelJoint.motor = new JointMotor2D { motorSpeed = finalInput * maxDriveSpeed, maxMotorTorque = power }; ;
+        if (gameManager.IsFuel())
+		{
+            driveWheelJoint.useMotor = true;
+            driveWheelJoint.motor = new JointMotor2D { motorSpeed = finalInput * maxDriveSpeed, maxMotorTorque = power }; 
+        }
     }
 
     void StopMotor()

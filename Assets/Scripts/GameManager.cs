@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
 		fuelLevel = 1f;
 	}
 
+	public bool IsFuel()
+	{
+		return fuelLevel > 0 ? true : false;
+	}
+
 	public void AddScore(int scoreToAdd)
 	{
 		score += scoreToAdd;
