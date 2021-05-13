@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Fuel : MonoBehaviour
 {
     [SerializeField] string playerTag = "Player";
+    [SerializeField] UnityEvent OnPickupEvent;
 
     GameManager gameManager;
 
@@ -16,8 +18,9 @@ public class Fuel : MonoBehaviour
 	{
 		if (collision.CompareTag(playerTag))
 		{
+            OnPickupEvent.Invoke();
             gameManager.Refuel();
-            Destroy(gameObject);
+            Destroy(gameObject, 2f);
 		}
 	}
 }
