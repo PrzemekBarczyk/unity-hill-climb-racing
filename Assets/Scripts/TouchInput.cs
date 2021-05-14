@@ -5,8 +5,8 @@ public class TouchInput : MonoBehaviour
 	[SerializeField] TouchDetector brakeButton;
 	[SerializeField] TouchDetector gasButton;
 
-	[SerializeField] float brakeSmoothTime = 0.01f;
-	[SerializeField] float gasSmoothTime = 0.05f;
+	[SerializeField] float brakeSmoothTime = 0.1f;
+	[SerializeField] float gasSmoothTime = 0.1f;
 
 	static float rawBrakeInput;
 	static float rawGasInput;
@@ -24,7 +24,7 @@ public class TouchInput : MonoBehaviour
 		else
 		{
 			rawBrakeInput = 0f;
-			dampedBrakeInput = rawBrakeInput;
+			dampedBrakeInput = ValueDamper.Damp(dampedBrakeInput, rawBrakeInput, brakeSmoothTime);
 		}
 
 		if (gasButton.IsTouched())
@@ -35,7 +35,7 @@ public class TouchInput : MonoBehaviour
 		else
 		{
 			rawGasInput = 0f;
-			dampedGasInput = rawGasInput;
+			dampedGasInput = ValueDamper.Damp(dampedGasInput, 0f, gasSmoothTime);
 		}
 	}
 
