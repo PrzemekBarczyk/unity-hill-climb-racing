@@ -44,15 +44,19 @@ public class PlayerController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-        if (brakeRawInput == 0f && gasRawInput == 0f)
-		{
-            StopMotor();
-		}
-		else
-		{
-            RunMotor();
-            Rotate();
+        if (brakeRawInput > 0f && carRigidbody.velocity.x > 3f)
+        {
+            Stop();
         }
+        if (brakeRawInput == 0f && gasRawInput == 0f)
+        {
+            Idle();
+        }
+		else if (gameManager.IsFuel())
+		{
+			Move();
+			Rotate();
+		}
 	}
 
     void GetInput()
@@ -66,18 +70,21 @@ public class PlayerController : MonoBehaviour
         finalRawInput = brakeRawInput > 0f ? brakeRawInput : gasRawInput;
     }
 
-    void RunMotor()
-	{
-        if (gameManager.IsFuel())
-		{
-            driveWheelJoint.useMotor = true;
-            driveWheelJoint.motor = new JointMotor2D { motorSpeed = finalInput * maxDriveSpeed, maxMotorTorque = power }; 
-        }
+    void Idle()
+    {
+        driveWheelJoint.useMotor = false;
     }
 
-    void StopMotor()
+    void Stop()
 	{
-        driveWheelJoint.useMotor = false;
+        driveWheelJoint.useMotor = true;
+        driveWheelJoint.motor = new JointMotor2D { motorSpeed = 0f, maxMotorTorque = power };
+    }
+
+    void Move()
+    {
+        driveWheelJoint.useMotor = true;
+        driveWheelJoint.motor = new JointMotor2D { motorSpeed = finalInput * maxDriveSpeed, maxMotorTorque = power };
     }
 
     void Rotate()
