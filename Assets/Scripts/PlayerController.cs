@@ -7,16 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Required components")]
     [SerializeField] Rigidbody2D carRigidbody;
-    [SerializeField] WheelJoint2D driveWheelJoint;
-    [SerializeField] CircleCollider2D backWheelCollider;
-    [SerializeField] CircleCollider2D frontWheelCollider;
 
-    [Header("Required layers")]
-    [SerializeField] LayerMask groundLayer;
-
-    [Header("Speed and power")]
-    [SerializeField] float maxDriveSpeed = 2000f;
-    [SerializeField] float power = 10000f;
+    [SerializeField] Wheel driveWheel;
+    [SerializeField] Wheel secondWheel;
 
     [Header("Rotation")]
     [SerializeField] float onAirRotationSpeed = 8f;
@@ -72,19 +65,20 @@ public class PlayerController : MonoBehaviour
 
     void Idle()
     {
-        driveWheelJoint.useMotor = false;
+        driveWheel.Idle();
+        secondWheel.Idle();
     }
 
     void Stop()
 	{
-        driveWheelJoint.useMotor = true;
-        driveWheelJoint.motor = new JointMotor2D { motorSpeed = 0f, maxMotorTorque = power };
-    }
+        driveWheel.Stop();
+        secondWheel.Stop();
+	}
 
     void Move()
     {
-        driveWheelJoint.useMotor = true;
-        driveWheelJoint.motor = new JointMotor2D { motorSpeed = finalInput * maxDriveSpeed, maxMotorTorque = power };
+        driveWheel.Move(finalInput);
+        secondWheel.Idle();
     }
 
     void Rotate()
@@ -95,6 +89,6 @@ public class PlayerController : MonoBehaviour
 
     bool OnGround()
 	{
-        return backWheelCollider.IsTouchingLayers(groundLayer) || frontWheelCollider.IsTouchingLayers(groundLayer);
+        return driveWheel.OnGround() || secondWheel.OnGround();
 	}
 }
