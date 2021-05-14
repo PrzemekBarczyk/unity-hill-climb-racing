@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
     float gasInput;
     float finalInput;
 
+    float brakeRawInput;
+    float gasRawInput;
+    float finalRawInput;
+
     GameManager gameManager;
 
 	void Start()
@@ -40,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-        if (brakeInput == 0 && gasInput == 0)
+        if (brakeRawInput == 0f && gasRawInput == 0f)
 		{
             StopMotor();
 		}
@@ -55,9 +59,11 @@ public class PlayerController : MonoBehaviour
 	{
         brakeInput = TouchInput.GetDampedBrakeInput();
         gasInput = -TouchInput.GetDampedGasInput();
+        brakeRawInput = TouchInput.GetRawBrakeInput();
+        gasRawInput = -TouchInput.GetRawGasInput();
 
-        if (brakeInput > 0f) finalInput = brakeInput;
-        else finalInput = gasInput;
+        finalInput = brakeRawInput > 0f ? brakeInput : gasInput;
+        finalRawInput = brakeRawInput > 0f ? brakeRawInput : gasRawInput;
     }
 
     void RunMotor()
@@ -76,8 +82,8 @@ public class PlayerController : MonoBehaviour
 
     void Rotate()
 	{
-		if (!OnGround()) carRigidbody.AddTorque(-finalInput * onAirRotationSpeed);
-		else carRigidbody.AddTorque(-finalInput * onGroundRotationSpeed);
+		if (!OnGround()) carRigidbody.AddTorque(-finalRawInput * onAirRotationSpeed);
+		else carRigidbody.AddTorque(-finalRawInput * onGroundRotationSpeed);
 	}
 
     bool OnGround()
