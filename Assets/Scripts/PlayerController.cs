@@ -44,11 +44,11 @@ public class PlayerController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-        if (brakeRawInput > 0f && carRigidbody.velocity.x > 3f)
+        if (brakeRawInput == 1f && carRigidbody.velocity.x > 3f)
         {
             Stop();
         }
-        if (brakeRawInput == 0f && gasRawInput == 0f)
+        else if (brakeRawInput == 0f && gasRawInput == 0f)
         {
             Idle();
         }
