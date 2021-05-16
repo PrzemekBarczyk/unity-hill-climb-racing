@@ -41,15 +41,15 @@ public class PlayerController : MonoBehaviour
         {
             Stop();
         }
-        else if (brakeRawInput == 0f && gasRawInput == 0f)
+        else if (brakeRawInput == 0f && gasRawInput == 0f || !gameManager.IsFuel())
         {
             Idle();
         }
-		else if (gameManager.IsFuel())
-		{
-			Move();
-			Rotate();
-		}
+        else
+        {
+            Move();
+            Rotate();
+        }
 	}
 
     void GetInput()
