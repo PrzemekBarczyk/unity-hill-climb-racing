@@ -2375,7 +2375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed19d51807bb744d81922ae2c7e2586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1305309690}
+  player: {fileID: 539936639}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2523,7 +2523,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 699597948}
   m_Father: {fileID: 1305309690}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3139,8 +3140,8 @@ Transform:
   m_Children:
   - {fileID: 2138277377}
   - {fileID: 2124388249}
-  m_Father: {fileID: 1305309690}
-  m_RootOrder: 1
+  m_Father: {fileID: 539936639}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &699597949
 MonoBehaviour:
@@ -4363,6 +4364,7 @@ GameObject:
   - component: {fileID: 892034106}
   - component: {fileID: 892034108}
   - component: {fileID: 892034107}
+  - component: {fileID: 892034110}
   m_Layer: 6
   m_Name: Wheel Back
   m_TagString: Player
@@ -4378,11 +4380,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892034104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.81, y: -0.724, z: 0}
+  m_LocalPosition: {x: -0.81, y: -0.657, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1305309690}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &892034106
 SpriteRenderer:
@@ -4472,6 +4474,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &892034110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892034104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de3171659f999949a0dca133eec48e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelJoint: {fileID: 1305309692}
+  dirtParticles: {fileID: 1577698342}
+  maxDriveSpeed: 2000
+  power: 1000
+  groundTag: Ground
 --- !u!4 &896160618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5677989629783158243, guid: 3d7c5018057095644bb5b6348300c64f, type: 3}
@@ -8550,8 +8569,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 1.735701
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -8572,9 +8591,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 539936639}
-  - {fileID: 699597948}
   - {fileID: 892034105}
   - {fileID: 1492285302}
+  - {fileID: 1577698344}
+  - {fileID: 1312208837}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8592,11 +8612,11 @@ WheelJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0.807, y: -0.612}
+  m_Anchor: {x: 0.807, y: -0.657}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
-    m_DampingRatio: 0.3
-    m_Frequency: 2
+    m_DampingRatio: 0
+    m_Frequency: 3.5
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -8615,12 +8635,12 @@ WheelJoint2D:
   m_ConnectedRigidBody: {fileID: 892034108}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.81, y: -0.612}
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: -0.81, y: -0.657}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
-    m_DampingRatio: 0.3
-    m_Frequency: 2
+    m_DampingRatio: 0
+    m_Frequency: 3.5
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -8639,20 +8659,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carRigidbody: {fileID: 1305309689}
-  driveWheelJoint: {fileID: 1305309692}
-  backWheelCollider: {fileID: 892034107}
-  frontWheelCollider: {fileID: 1492285304}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  maxDriveSpeed: 1500
-  power: 10000
+  driveWheel: {fileID: 892034110}
+  secondWheel: {fileID: 1492285306}
   onAirRotationSpeed: 8
   onGroundRotationSpeed: 1
 --- !u!4 &1310708472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5677989629783158243, guid: 3d7c5018057095644bb5b6348300c64f, type: 3}
   m_PrefabInstance: {fileID: 1018544097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1312208834 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 417523149466502072, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+  m_PrefabInstance: {fileID: 3715592859320545899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1312208837 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+  m_PrefabInstance: {fileID: 3715592859320545899}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1329376371 stripped
 Transform:
@@ -9435,6 +9459,7 @@ GameObject:
   - component: {fileID: 1492285303}
   - component: {fileID: 1492285305}
   - component: {fileID: 1492285304}
+  - component: {fileID: 1492285306}
   m_Layer: 6
   m_Name: Wheel Front
   m_TagString: Player
@@ -9450,11 +9475,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492285301}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.807, y: -0.724, z: 0}
+  m_LocalPosition: {x: 0.807, y: -0.657, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1305309690}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1492285303
 SpriteRenderer:
@@ -9544,6 +9569,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1492285306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492285301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de3171659f999949a0dca133eec48e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelJoint: {fileID: 1305309691}
+  dirtParticles: {fileID: 1312208834}
+  maxDriveSpeed: 2000
+  power: 1000
+  groundTag: Ground
 --- !u!1 &1500488526
 GameObject:
   m_ObjectHideFlags: 0
@@ -10038,6 +10080,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d185f575b71644d4ebf911d1a9605e66, type: 3}
+--- !u!1001 &1577698341
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1305309690}
+    m_Modifications:
+    - target: {fileID: 1577698345, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: car
+      value: 
+      objectReference: {fileID: 1305309690}
+    - target: {fileID: 1577698345, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: wheel
+      value: 
+      objectReference: {fileID: 892034105}
+    - target: {fileID: 1577698345, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: carBody
+      value: 
+      objectReference: {fileID: 1305309690}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.842
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9961947
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.08715578
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502075, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_Name
+      value: Dirt Back
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+--- !u!198 &1577698342 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 417523149466502072, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+  m_PrefabInstance: {fileID: 1577698341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1577698344 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+  m_PrefabInstance: {fileID: 1577698341}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1598519648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10847,8 +10968,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brakeButton: {fileID: 2106957394}
   gasButton: {fileID: 646135491}
-  brakeSmoothTime: 0.01
-  gasSmoothTime: 0.07
+  brakeSmoothTime: 0.1
+  gasSmoothTime: 0.1
 --- !u!4 &1675662943
 Transform:
   m_ObjectHideFlags: 0
@@ -13127,3 +13248,72 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &3715592859320545899
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1305309690}
+    m_Modifications:
+    - target: {fileID: 1577698345, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: car
+      value: 
+      objectReference: {fileID: 1305309690}
+    - target: {fileID: 1577698345, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: wheel
+      value: 
+      objectReference: {fileID: 1492285302}
+    - target: {fileID: 1577698345, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: carBody
+      value: 
+      objectReference: {fileID: 539936639}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.769
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.947
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9961947
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.08715578
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502074, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 417523149466502075, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
+      propertyPath: m_Name
+      value: Dirt Front
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e33a33b6145ad040bda771e2c84355a, type: 3}
