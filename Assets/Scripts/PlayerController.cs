@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
     {
-        GetInput();
+        TakeInput();
     }
 
 	void FixedUpdate()
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         }
 	}
 
-    void GetInput()
+    void TakeInput()
 	{
         brakeInput = TouchInput.GetDampedBrakeInput();
         gasInput = -TouchInput.GetDampedGasInput();
@@ -90,5 +90,10 @@ public class PlayerController : MonoBehaviour
     bool OnGround()
 	{
         return driveWheel.OnGround() || secondWheel.OnGround();
+	}
+
+    public float GetInput()
+	{
+        return finalInput;
 	}
 }

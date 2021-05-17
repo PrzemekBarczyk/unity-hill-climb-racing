@@ -64,6 +64,11 @@ public class Wheel : MonoBehaviour
         return onGround;
 	}
 
+    public float GetMaxSpeed()
+	{
+        return maxDriveSpeed;
+	}
+
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.transform.CompareTag(groundTag))
