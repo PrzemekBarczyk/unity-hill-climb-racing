@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Death : MonoBehaviour
 {
     [SerializeField] string groundTag = "Ground";
+	[SerializeField] UnityEvent OnPlayerDeath;
 
 	SceneManager sceneManager;
 
@@ -13,6 +15,12 @@ public class Death : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.CompareTag(groundTag)) sceneManager.ResetLevel();
+		if (collision.CompareTag(groundTag)) Die();
+	}
+
+	void Die()
+	{
+		OnPlayerDeath.Invoke();
+		sceneManager.ResetLevel();
 	}
 }

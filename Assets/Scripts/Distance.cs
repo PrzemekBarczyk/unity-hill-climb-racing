@@ -12,9 +12,12 @@ public class Distance : MonoBehaviour
     int levelDistance = 100;
     int bestDistance;
 
+    string bestDistanceVarName = "BestDistance";
+
     void Start()
     {
         text = GetComponent<Text>();
+        bestDistance = PlayerPrefs.GetInt(bestDistanceVarName, 0);
     }
 
     void Update()
@@ -23,4 +26,9 @@ public class Distance : MonoBehaviour
         if (currentDistance > levelDistance) levelDistance += 100;
         text.text = currentDistance.ToString() + "m / " + levelDistance.ToString() + "m (best: " + bestDistance.ToString() + ")";
     }
+
+    public void SaveBestDistance()
+	{
+        if (currentDistance > bestDistance) PlayerPrefs.SetInt(bestDistanceVarName, Mathf.RoundToInt(currentDistance));
+	}
 }
