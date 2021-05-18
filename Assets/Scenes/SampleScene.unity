@@ -643,6 +643,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1475199668}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RemoveFuelFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: FuelLevel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 999690953}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Transform, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6de541d6cba4224892e985215a7990a, type: 3}
 --- !u!1001 &116680110
@@ -1832,6 +1864,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1475199668}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RemoveFuelFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: FuelLevel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2072494160}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Transform, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6de541d6cba4224892e985215a7990a, type: 3}
 --- !u!1001 &315514661
@@ -2361,6 +2425,38 @@ PrefabInstance:
     - target: {fileID: 624017026059946806, guid: c6de541d6cba4224892e985215a7990a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1475199668}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RemoveFuelFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: FuelLevel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 722755237}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Transform, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6de541d6cba4224892e985215a7990a, type: 3}
@@ -10285,6 +10381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1475199666}
   - component: {fileID: 1475199667}
+  - component: {fileID: 1475199668}
   m_Layer: 5
   m_Name: Fuel Level Slider
   m_TagString: Untagged
@@ -10305,6 +10402,7 @@ RectTransform:
   m_Children:
   - {fileID: 188964135}
   - {fileID: 901526124}
+  - {fileID: 1906212841}
   m_Father: {fileID: 1432659464}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10364,6 +10462,28 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1475199668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475199665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76abaf134b293474e8e4695b1661bc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToFuel: {fileID: 1906212842}
+  car: {fileID: 1305309690}
+  fuelPickups:
+  - {fileID: 1186766871}
+  - {fileID: 1637050073}
+  - {fileID: 999690953}
+  - {fileID: 527149192}
+  - {fileID: 722755237}
+  - {fileID: 2072494160}
+  - {fileID: 1290809871}
 --- !u!4 &1479308611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5677989629783158243, guid: 3d7c5018057095644bb5b6348300c64f, type: 3}
@@ -11738,6 +11858,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1475199668}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RemoveFuelFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: FuelLevel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1637050073}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Transform, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6de541d6cba4224892e985215a7990a, type: 3}
 --- !u!4 &1637050073 stripped
@@ -12174,6 +12326,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1475199668}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6de541d6cba4224892e985215a7990a, type: 3}
 --- !u!4 &1709510625 stripped
@@ -13544,6 +13700,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5677989629783158243, guid: 3d7c5018057095644bb5b6348300c64f, type: 3}
   m_PrefabInstance: {fileID: 247936459}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1906212840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1906212841}
+  - component: {fileID: 1906212843}
+  - component: {fileID: 1906212842}
+  m_Layer: 5
+  m_Name: Distance To Fuel Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1906212841
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906212840}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1475199666}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1906212842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906212840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 64
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 11
+--- !u!222 &1906212843
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906212840}
+  m_CullTransparentMesh: 1
 --- !u!4 &1906262315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5677989629783158243, guid: 3d7c5018057095644bb5b6348300c64f, type: 3}
@@ -13670,6 +13905,38 @@ PrefabInstance:
     - target: {fileID: 624017026059946806, guid: c6de541d6cba4224892e985215a7990a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1475199668}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RemoveFuelFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: FuelLevel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 527149192}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Transform, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6de541d6cba4224892e985215a7990a, type: 3}
@@ -14788,6 +15055,38 @@ PrefabInstance:
     - target: {fileID: 624017026059946806, guid: c6de541d6cba4224892e985215a7990a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1475199668}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RemoveFuelFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: FuelLevel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1290809871}
+    - target: {fileID: 6922640368906312443, guid: c6de541d6cba4224892e985215a7990a, type: 3}
+      propertyPath: OnPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Transform, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6de541d6cba4224892e985215a7990a, type: 3}
