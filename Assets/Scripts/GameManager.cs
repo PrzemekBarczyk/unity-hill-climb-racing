@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
 		fuelLevel = 1f;
 	}
 
+	public float GetFuelLevel()
+	{
+		return fuelLevel;
+	}
+
 	public bool IsFuel()
 	{
 		return fuelLevel > 0 ? true : false;
