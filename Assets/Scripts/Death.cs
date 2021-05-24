@@ -1,6 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Collider2D))]
 public class Death : MonoBehaviour
 {
     [SerializeField] string groundTag = "Ground";
@@ -13,14 +15,15 @@ public class Death : MonoBehaviour
 		sceneManager = GameObject.Find("Scene Manager").GetComponent<SceneManager>();
 	}
 
-	void OnTriggerEnter2D(Collider2D collision)
+	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.CompareTag(groundTag)) Die();
+		if (collision.transform.CompareTag(groundTag)) StartCoroutine(Die());
 	}
 
-	void Die()
+	IEnumerator Die()
 	{
 		OnPlayerDeath.Invoke();
+		yield return new WaitForSeconds(2f);
 		sceneManager.ResetLevel();
 	}
 }
