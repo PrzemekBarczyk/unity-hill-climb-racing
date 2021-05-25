@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
 	void Start()
 	{
+		Time.timeScale = 0.9f;
 		uiController = GameObject.Find("UI").GetComponent<UIController>();
 		uiController.UpdateScore(score.ToString());
 	}
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
 
 	public void Resume()
 	{
-		Time.timeScale = 1f;
+		Time.timeScale = 0.9f;
 	}
 
 	public void Exit()
