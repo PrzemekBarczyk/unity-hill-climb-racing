@@ -6,8 +6,8 @@ public class UIController : MonoBehaviour
     [Header("Fuel")]
     [SerializeField] Slider fuelLevelSlider;
 
-    [Header("Score")]
-    [SerializeField] Text scoreText;
+    [Header("Coins")]
+    [SerializeField] Text coinsText;
 
     [Header("Pedals")]
     [SerializeField] GameObject brakeNormalImage;
@@ -31,9 +31,9 @@ public class UIController : MonoBehaviour
         fuelLevelSlider.value = newLevel;
 	}
 
-    public void UpdateScore(string newScore)
+    public void UpdateCoins(string newScore)
 	{
-        scoreText.text = newScore;
+        coinsText.text = newScore;
 	}
 
 	public void DisplayBrakePressed(bool isPressed)

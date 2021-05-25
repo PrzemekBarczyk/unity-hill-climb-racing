@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/SelectVehicle.unity
+    guid: 6de274f649d7337468149c25a6f8c748
+  - enabled: 1
+    path: Assets/Scenes/SelectStage.unity
+    guid: f4be68073a7ae364d917a0b24aba0e27
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

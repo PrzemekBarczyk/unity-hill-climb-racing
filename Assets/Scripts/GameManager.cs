@@ -7,13 +7,12 @@ public class GameManager : MonoBehaviour
 	[SerializeField] float fuelUsage = 0.05f;
 	float fuelLevel = 1f;
 
-    int score;
 
 	void Start()
 	{
 		Time.timeScale = 0.9f;
 		uiController = GameObject.Find("UI").GetComponent<UIController>();
-		uiController.UpdateScore(score.ToString());
+		uiController.UpdateCoins(PlayerPrefs.GetInt("coins").ToString());
 	}
 
 	void Update()
@@ -42,10 +41,11 @@ public class GameManager : MonoBehaviour
 		return fuelLevel > 0 ? true : false;
 	}
 
-	public void AddScore(int scoreToAdd)
+	public void AddCoins(int coinsToAdd)
 	{
-		score += scoreToAdd;
-		uiController.UpdateScore(score.ToString());
+		var coins = PlayerPrefs.GetInt("coins") + coinsToAdd;
+		PlayerPrefs.SetInt("coins", coins);
+		uiController.UpdateCoins(coins.ToString());
 	}
 
 	public void Pause()

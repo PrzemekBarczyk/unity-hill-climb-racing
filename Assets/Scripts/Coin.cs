@@ -20,7 +20,7 @@ public class Coin : MonoBehaviour
 		if (collision.CompareTag(playerTag))
 		{
 			OnPickupEvent.Invoke();
-			gameManager.AddScore(value);
+			gameManager.AddCoins(value);
 			Destroy(gameObject, 2f);
 		}
 	}
