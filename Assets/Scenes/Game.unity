@@ -11163,6 +11163,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7be139909f29064b93af6abd257c1b8, type: 3}
+--- !u!114 &1498680795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2791798873221064210, guid: f7be139909f29064b93af6abd257c1b8, type: 3}
+  m_PrefabInstance: {fileID: 1498680794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd1790553763ae479314ddcd7c70fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1500488526
 GameObject:
   m_ObjectHideFlags: 0
@@ -12548,7 +12559,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1498680795}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: ResetLevel
         m_Mode: 1
